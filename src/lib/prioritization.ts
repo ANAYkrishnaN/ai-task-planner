@@ -70,12 +70,12 @@ export function createTaskExplanation(task: PrioritizedTask): string {
     return "Marked Needs Info because deadline and importance are missing.";
   }
 
-  if (task.bucket === "Do Now") {
+  if (task.deadline === "soon") {
     return "Marked Do Now because this task has a near deadline.";
   }
 
-  if (task.bucket === "Do Soon") {
-    return "Marked Do Soon because this task is high importance.";
+  if (task.importance === "high") {
+    return "Marked Do Soon because this task is important.";
   }
 
   return "Marked Can Wait because there is no near deadline or high importance.";
