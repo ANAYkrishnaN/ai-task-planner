@@ -1,0 +1,51 @@
+{
+  "representative_cases": [
+    {
+      "input": "submit assignment tomorrow",
+      "expected": "Do Now",
+      "actual": "Do Now",
+      "result": "PASS"
+    },
+    {
+      "input": "important meeting prep",
+      "expected": "Do Soon",
+      "actual": "Do Soon",
+      "result": "PASS"
+    },
+    {
+      "input": "buy groceries",
+      "expected": "Can Wait",
+      "actual": "Can Wait",
+      "result": "PASS"
+    },
+    {
+      "input": "do something later",
+      "expected": "Needs Info",
+      "actual": "Needs Info",
+      "result": "PASS"
+    },
+    {
+      "input": "urgent bug fix",
+      "expected": "Do Soon",
+      "actual": "Do Soon",
+      "result": "PASS"
+    }
+  ],
+  "failure_cases": [
+    {
+      "input": "deal with taxes",
+      "issue": "no deadline or importance detected",
+      "result": "Needs Info (uncertain)"
+    },
+    {
+      "input": "finish project",
+      "issue": "importance not detected",
+      "result": "Needs Info (missed urgency)"
+    }
+  ],
+  "baseline_comparison": {
+    "baseline": "simple rule engine without ETL",
+    "improved": "ETL with keyword extraction (deadline + importance)",
+    "improvement": "more accurate classification for tasks with natural language signals"
+  }
+}
